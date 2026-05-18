@@ -68,5 +68,4 @@ Response:
   "translated_text": "Bonjour"
 }
 ```
-```
 
