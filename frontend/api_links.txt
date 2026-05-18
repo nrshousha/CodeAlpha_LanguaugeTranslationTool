@@ -1,0 +1,35 @@
+# Language Translator API Integration Guide
+
+This file outlines where you need to implement API calls and functionality in the frontend code.
+
+## 1. Translation API (e.g., Google Cloud Translation API, DeepL API, or MyMemory API)
+**File to modify:** `script.js`
+**Where to implement:** Inside the `translateBtn.addEventListener('click', ...)` function (you need to add this event listener).
+
+**What to do:**
+1. Get the text from `document.getElementById('input-text').value`.
+2. Get the source language from `document.getElementById('source-lang').value`.
+3. Get the target language from `document.getElementById('target-lang').value`.
+4. Make a `fetch()` request (or use Axios) to your chosen translation API endpoint.
+   - Example endpoint: `https://api.mymemory.translated.net/get?q={text}&langpair={source}|{target}`
+5. Set the result to `document.getElementById('output-text').value = data.responseData.translatedText;`.
+
+## 2. Dynamic Language Loading (Optional but Recommended)
+**File to modify:** `script.js`
+**Where to implement:** Inside the `DOMContentLoaded` event listener.
+
+**What to do:**
+1. Make an API call to get a list of supported languages from your translation service.
+2. Clear the hardcoded `<option>` elements in `index.html`.
+3. Loop through the API response and dynamically append `<option>` elements to both `#source-lang` and `#target-lang` dropdowns.
+
+## 3. Language Swap Functionality
+**File to modify:** `script.js`
+**Where to implement:** Inside the existing `swapBtn.addEventListener('click', ...)` function.
+
+**What to do:**
+1. We already swap the dropdown values.
+2. You also need to swap the text contents:
+   - Move text from `output-text` to `input-text`.
+   - Clear the `output-text`.
+3. Optionally trigger a new translation automatically after swapping.
