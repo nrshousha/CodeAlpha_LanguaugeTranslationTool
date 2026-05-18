@@ -1,4 +1,3 @@
-```markdown
 # Aura Translate 🌐
 
 A language translation tool with a sleek, modern look. Built with a Python FastAPI backend and a clean HTML/CSS/JS frontend, powered by Google Translate.
@@ -21,7 +20,7 @@ A language translation tool with a sleek, modern look. Built with a Python FastA
 
 ## Project Structure
 
-```
+```markdown
 Language translator/
 ├── frontend/
 │   ├── index.html
